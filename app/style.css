@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body, input {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+.prepend-mag {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-family: AppleColorEmoji;
+}
+
+.code::selection {
+  background-color: transparent;
+}
+
+.devices {
+  padding: 20px 10px 20px 35px;
+  font-size: 14px;
+  width: 100%;
+  border: 0;
+  background: #f7f7f7;
+  border-bottom: 1px solid #f0f0f0;
+  -webkit-appearance: textfield;
+}
+
+.devices:focus {
+  background: #fff;
+  outline: none;
+}
+
+.code {
+  height: 340px;
+  width: 100%;
+  resize: none;
+  border:none;
+  outline: none;
+  overflow: auto;
+  position: relative;
+}
+
+.control {
+  position: fixed;
+  bottom: 5px;
+  left: 5px;
+}
+
+.debug-text {
+  font-size: 14px;
+  border: 0;
+  background: #f7f7f7;
+  border-bottom: 1px solid #f0f0f0;
+  -webkit-appearance: textfield;
+}
+
+.debug-text:focus {
+  background: #fff;
+  outline: none;
+}
+
+
+.save {
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+}

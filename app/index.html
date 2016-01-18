@@ -1,0 +1,12 @@
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<span class="prepend-mag" aria-hidden="true">🎹</span>
+<input class="devices js-devices" type="text" placeholder="MIDI device is not connecting." disabled>
+<textarea class="code js-code" placeholder='if (e.data == [128, 84, 137]){&#13;&#10;  system("open(\"http://google.com\")");&#13;&#10;}'></textarea>
+<div class="control">
+  <input class="reload" type="button" value="reload" onClick="requestMIDIAccess()">
+  <input class="debug"  type='checkbox' name="debug" placeholder="debug area" onChange="debugCheck(this)">
+  <input class="debug-text js-debug" type="text" disabled>
+</div>
+<input class="save" type="button" value="save" onClick="storeHandle()">
+<script type="text/javascript" src="handle.js"></script>
