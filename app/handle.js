@@ -14,6 +14,9 @@ function debugCheck(checkbox){
 
 function loadHandle(){
   handle = localStorage['handle'];
+}
+
+function codeInit(){
   document.querySelector('.js-code').value  = handle;
 }
 
@@ -64,7 +67,11 @@ ipc.on('appleScriptSuccess', function(event, arg){
 function onMIDIEvent(e){
   if(inputs.length > 0){
     console.log(e);
-    if(debug){ document.querySelector('.js-debug').value = '[' + e.data.join(',') + ']'; }
+    var ch  = e.data[0].toString(16);
+    var num = e.data[1].toString(16);
+    var val = e.data[2].toString(16);
+
+    if(debug){ document.querySelector('.js-debug').value = 'ch:' + ch + ', num:' + num + ', val:' + val; }
     loadHandle();
     eval(handle.replace(/\r?\n/g, ''));
   }
@@ -76,4 +83,5 @@ function requestMIDIAccess(){
   navigator.requestMIDIAccess().then(onMIDISuccess, onMIDIFailure);
 }
 
-requestMIDIAccess()
+requestMIDIAccess();
+codeInit();
