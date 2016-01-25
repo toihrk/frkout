@@ -69,7 +69,14 @@ menuBar.on('ready', function ready () {
 
 ipc.on('appleScript', function(event, arg) {
   as.execString(arg, function(err, rtn) {
-    if (err) { event.sender.send('appleScriptError', err); }
-    if (rtn) { event.sender.send('appleScriptSuccess', rtn); }
+    if (err) {
+      console.log('ASERR: ' + err);
+      event.sender.send('appleScriptError', err);
+    }
+
+    if (rtn) {
+      console.log('ASRTN: ' + rtn);
+      event.sender.send('appleScriptSuccess', rtn);
+    }
   });
 });
